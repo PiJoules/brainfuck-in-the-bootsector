@@ -40,6 +40,16 @@ startup, so you can constantly change it with every interpretter run.
   infinite loop of you hit `ENTER` a couple of times on the same `Hello world`
   code.*
 
+## Booting on Real Hardware
+
+Take a USB stick, burn the binary on it, and select the USB stick from the BIOS when booting.
+
+Assuming your USB stick is mounted at `/dev/sdb`, just run:
+
+```sh
+$ sudo dd if=boot.bin of=/dev/sdb && sync
+```
+
 ## Constraints
 
 A lot of corners had to be cut obviously for the sake of fitting it all into 512

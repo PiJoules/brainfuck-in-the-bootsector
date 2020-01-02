@@ -374,6 +374,11 @@ print_done:
 
 ;;;;; entry ;;;;;
 entry:
+  ; NOTE: Remember to zero DS since it is not guaranteed to be zero at the
+  ; start.
+  mov ax, 0
+  mov ds, ax
+
   ; Clear screen
   ; See https://en.wikipedia.org/wiki/INT_10H for args
   mov dx, BOTTOMRIGHT_INPUT_WINDOW_COORD
